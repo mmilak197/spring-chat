@@ -7,13 +7,13 @@ import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
 import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerConfigurer;
 
 @Configuration
-@EnableWebSocketMessageBroker
+@EnableWebSocketMessageBroker //potrzebujemy kolejki więc korzystamy z wbudowanego brokera w mechanizmie Springa
 public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
-        registry.addEndpoint("/chat");
+        registry.addEndpoint("/chat");  //skonfigurowane endpoint
     }
 
     @Override
